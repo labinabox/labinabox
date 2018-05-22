@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  sevtechages:
+    image: registry.gitlab.com/sparky8251/sevtech-docker
+    ports:
+      - '25565:25565'
+      - '25565:25565/udp'
+    volumes:
+      - '/data/docker/minecraft/sevtechages:/data/minecraft/world'
+    deploy:
+      mode: replicated
+      replicas: 1

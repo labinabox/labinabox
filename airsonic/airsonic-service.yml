@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  airsonic:
+    image: airsonic/airsonic:latest
+    ports:
+      - '4040:4040'
+    volumes:
+      - '/data/media/Music:/airsonic/music'
+      - '/data/media/Podcasts:/airsonic/podcasts'
+      - '/data/docker/airsonic/playlists:/airsonic/playlists'
+      - '/data/docker/airsonic/data:/airsonic/data'
+    deploy:
+      mode: replicated
+      replicas: 1

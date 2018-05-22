@@ -1,0 +1,14 @@
+--realm=POSSUMLODGE.ME
+--domain=possumlodge.me
+--allow-zone-overlap
+--ds-password=
+--admin-password=
+--mkhomedir
+--hostname=ipa.possumlodge.me
+--ip-address=192.168.1.41
+--idstart=2000
+--setup-dns
+--forwarder=192.168.1.21
+--forwarder=192.168.1.22
+--auto-reverse
+--no-host-dns

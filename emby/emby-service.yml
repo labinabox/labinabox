@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  emby:
+    image: emby/embyserver:latest
+    environment:
+      UID: 999
+      GUID: 1001
+    ports:
+      - '8096:8096'
+    volumes:
+      - '/data/docker/emby:/config'
+      - '/data/media/Video:/mnt/media'
+    deploy:
+      mode: replicated
+      replicas: 1

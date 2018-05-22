@@ -1,0 +1,30 @@
+version: '3'
+
+services:
+  freeipa:
+    image: freeipa/freeipa-server
+    hostname: ipa.possumlodge.me
+    environment:
+      - IPA_SERVER_IP=192.168.1.41
+    ports:
+      - '5353:53/udp'
+      - '5353:53'
+      - '80:80'
+      - '443:443'
+      - '389:389'
+      - '636:636'
+      - '88:88'
+      - '88:88/udp'
+      - '464:464'
+      - '464:464/udp'
+      - '123:123'
+    volumes:
+      - '/sys/fs/cgroup:/sys/fs/cgroup:ro'
+      - '/data/docker/freeipa/data:/data:Z'
+      - '/data/docker/freeipa/cafiles:/root:Z'
+    tmpfs:
+      - '/run'
+      - '/tmp'
+    deploy:
+      mode: replicated
+      replicas: 1
